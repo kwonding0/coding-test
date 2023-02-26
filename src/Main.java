@@ -18,6 +18,6 @@ public class Main {
         new SpecialOrder().solution(numlist,30);
 
         //저주의 숫자 3
-        new FuxxNumberThree().solution(3);
+        new FuxxNumberThree().solution(40);
     }
 }
