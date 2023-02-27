@@ -14,11 +14,11 @@ public class FuxxNumberThree {
         int answer = 0;
 
         int[] arr = IntStream.rangeClosed(1, 200).toArray(); //1~200까지 배열 만들기
-
-        int[] ints = Arrays.stream(arr).filter(o -> o % 3 != 0 && String.valueOf(o).indexOf("3") == -1).toArray();
-        answer = ints[n-1];
-        System.out.println("Arrays.toString(ints) = " + Arrays.toString(ints));
+        arr = Arrays.stream(arr).filter(o -> o % 3 != 0 && !String.valueOf(o).contains("3")).toArray();
+        answer = arr[n-1];
+        System.out.println("Arrays.toString(arr) = " + Arrays.toString(arr));
         System.out.println("answer = " + answer);
+
         return answer;
 
 
