@@ -1,7 +1,4 @@
-import level0.FuxxNumberThree;
-import level0.OngAlYee;
-import level0.PushString;
-import level0.SpecialOrder;
+import level0.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,10 +10,19 @@ public class Main {
         new PushString().solution("atat","tata");
 
         //특이한 정렬
-        int[]numlist = {10000,20,36,47,40,6,10,7000};
+        int[] numlist = {10000,20,36,47,40,6,10,7000};
         new SpecialOrder().solution(numlist,30);
 
         //저주의 숫자 3
         new FuxxNumberThree().solution(40);
+
+        //다항식 더하기
+        new AddPolynomial().solution("x + 1 + 0 + 9");
+        new AddPolynomial().solution("7 + 5");
+        new AddPolynomial().solution("3x + 7 + x");
+
+        //최빈값 구하기
+        int[] numlist2 = {10000,20,36,47,40,6,10,7000};
+        new FindMode().solution(numlist2);
     }
 }
