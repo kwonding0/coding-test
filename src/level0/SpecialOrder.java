@@ -18,7 +18,6 @@ public class SpecialOrder {
                 return Math.abs(o1-n) - Math.abs(o2-n); //절대값으로 오름차순
             }
         });
-        System.out.println(Arrays.toString(tempList));
 
         numlist = Arrays.stream(tempList).mapToInt(i->i).toArray(); //Integer[] -> int[] 변환 (반환 형식 맞추기 위함)
 

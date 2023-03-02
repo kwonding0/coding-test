@@ -16,8 +16,6 @@ public class FuxxNumberThree {
         int[] arr = IntStream.rangeClosed(1, 200).toArray(); //1~200까지 배열 만들기
         arr = Arrays.stream(arr).filter(o -> o % 3 != 0 && !String.valueOf(o).contains("3")).toArray();
         answer = arr[n-1];
-        System.out.println("Arrays.toString(arr) = " + Arrays.toString(arr));
-        System.out.println("answer = " + answer);
 
         return answer;
 

@@ -22,7 +22,8 @@ public class Main {
         new AddPolynomial().solution("3x + 7 + x");
 
         //최빈값 구하기
-        int[] numlist2 = {10000,20,36,47,40,6,10,7000};
+        //int[] numlist2 = {1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
+        int[] numlist2 = {1,1,2,2};
         new FindMode().solution(numlist2);
     }
 }
