@@ -10,9 +10,9 @@ public class OXQuiz {
         String[] answer = {};
 
         answer = Arrays.stream(quiz).map(o -> {
-            String o2 = "";
-            o2 = o.replaceAll("( \\+ | = | \\- )",","); //연산기호 삭제
-            int[] temp = Arrays.stream(o2.split(",")).mapToInt(i -> Integer.parseInt(i)).toArray(); //숫자별로 배열에 넣기
+            //String o2 = "";
+            //o2 = o.replaceAll("( \\+ | = | \\- )",","); //연산기호 삭제
+            int[] temp = Arrays.stream(o.split("( \\+ | = | \\- )")).mapToInt(i -> Integer.parseInt(i)).toArray(); //숫자별로 배열에 넣기
 
             if(o.contains("+")){ //덧셈
                 return temp[0] + temp[1] == temp[2] ? "O" : "X";

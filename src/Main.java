@@ -1,5 +1,7 @@
 import level0.*;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         //옹알이
@@ -22,12 +24,14 @@ public class Main {
         new AddPolynomial().solution("3x + 7 + x");
 
         //최빈값 구하기
-        //int[] numlist2 = {1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
-        int[] numlist2 = {1,1,2,2};
-        new FindMode().solution(numlist2);
+        int[] numlist2 = {1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
+        //int[] numlist2 = {1,1,2,2};
+        int answer2 = new FindMode().solution(numlist2);
+        System.out.println("answer2 = " + answer2);
 
         //OX퀴즈
         String[] quizList = {"5 + 66 = 71", "19 - 6 = 13", "5 - 15 = 63", "3 - 1 = 2"};
-        new OXQuiz().solution(quizList);
+        String[] answer = new OXQuiz().solution(quizList);
+        System.out.println("Arrays.toString(quizList) = " + Arrays.toString(answer));
     }
 }
