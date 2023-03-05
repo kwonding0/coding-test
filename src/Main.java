@@ -27,11 +27,18 @@ public class Main {
         int[] numlist2 = {1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
         //int[] numlist2 = {1,1,2,2};
         int answer2 = new FindMode().solution(numlist2);
-        System.out.println("answer2 = " + answer2);
+        //System.out.println("answer2 = " + answer2);
 
         //OX퀴즈
         String[] quizList = {"5 + 66 = 71", "19 - 6 = 13", "5 - 15 = 63", "3 - 1 = 2"};
         String[] answer = new OXQuiz().solution(quizList);
-        System.out.println("Arrays.toString(quizList) = " + Arrays.toString(answer));
+        //System.out.println("answer = " + answer);
+
+        //다음에 올 숫자
+        int common[] = {1, 2, 3, 4};
+        //int common[] = {2, 4, 8};
+        new NextNumber().solution(common);
+
+        //다음에 올 숫자
     }
 }
