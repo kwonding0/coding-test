@@ -61,7 +61,7 @@ public class FindMode {
                 });
 
 
-        System.out.println("map = " + map);
+        //System.out.println("map = " + map);
 
         Integer maxKey = map.keySet().stream().sorted(Collections.reverseOrder()).toList().get(0);
         if(map.get(maxKey).size() != 1)

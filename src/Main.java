@@ -39,6 +39,11 @@ public class Main {
         //int common[] = {2, 4, 8};
         new NextNumber().solution(common);
 
-        //다음에 올 숫자
+        //분수의 덧셈
+        //new AdditionOfFractions().solution(1,2,3,4);
+        new AdditionOfFractions().solution(9, 2, 1, 3);
+
+        //연속된 수의 합
+        new AddStraightNumbers().solution(1,2);
     }
 }
