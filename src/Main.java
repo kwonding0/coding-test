@@ -1,19 +1,17 @@
 import level0.*;
 
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         //옹알이
-        String[]a = {"a","b"};
+        String[] a = {"a", "b"};
         new OngAlYee().solution(a);
 
         //문자열 밀기
-        new PushString().solution("atat","tata");
+        new PushString().solution("atat", "tata");
 
         //특이한 정렬
-        int[] numlist = {10000,20,36,47,40,6,10,7000};
-        new SpecialOrder().solution(numlist,30);
+        int[] numlist = {10000, 20, 36, 47, 40, 6, 10, 7000};
+        new SpecialOrder().solution(numlist, 30);
 
         //저주의 숫자 3
         new FuxxNumberThree().solution(40);
@@ -35,7 +33,7 @@ public class Main {
         //System.out.println("answer = " + answer);
 
         //다음에 올 숫자
-        int common[] = {1, 2, 3, 4};
+        int[] common = {1, 2, 3, 4};
         //int common[] = {2, 4, 8};
         new NextNumber().solution(common);
 
@@ -44,6 +42,10 @@ public class Main {
         new AdditionOfFractions().solution(9, 2, 1, 3);
 
         //연속된 수의 합
-        new AddStraightNumbers().solution(1,2);
+        new AddStraightNumbers().solution(1, 2);
+
+        //겹치는 선분의 길이
+        int[][] lines = {{-3, -1}, {-2, 1}, {0, 2}};/*{{0, 5}, {3, 9}, {1, 10}};*///{{0, 1}, {2, 3}, {4, 5}};
+        new OverlapLineLength().solution(lines);
     }
 }
