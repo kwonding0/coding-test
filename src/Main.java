@@ -47,5 +47,8 @@ public class Main {
         //겹치는 선분의 길이
         int[][] lines = {{-3, -1}, {-2, 1}, {0, 2}};/*{{0, 5}, {3, 9}, {1, 10}};*///{{0, 1}, {2, 3}, {4, 5}};
         new OverlapLineLength().solution(lines);
+
+        int[][] lines2 = {{1, 4}, {9, 2}, {3, 8}, {11, 6}};
+        new Parallel().solution(lines2);
     }
 }
