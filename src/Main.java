@@ -48,10 +48,17 @@ public class Main {
         int[][] lines = {{-3, -1}, {-2, 1}, {0, 2}};/*{{0, 5}, {3, 9}, {1, 10}};*///{{0, 1}, {2, 3}, {4, 5}};
         new OverlapLineLength().solution(lines);
 
+        //평행
         int[][] dots = {{1, 4}, {9, 2}, {3, 8}, {11, 6}};
         new Parallel().solution(dots);
 
+        //안전지대
         int[][] board = {{1, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 1}};
         new SafeZone().solution(board);
+
+        //로또의 최고 순위와 최저 순위
+        int[] lottos = {44, 1, 0, 0, 31, 25};
+        int[] win_nums = {31, 10, 45, 1, 6, 19};
+        new LottoBestWorstRank().solution(lottos, win_nums);
     }
 }

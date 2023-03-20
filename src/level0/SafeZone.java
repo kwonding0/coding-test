@@ -12,13 +12,16 @@ public class SafeZone {
     //https://school.programmers.co.kr/learn/courses/30/lessons/120866
     public int solution(int[][] board) {
         int answer = board.length * board.length; //board판 전체 칸 개수
+
         Set<List<Integer>> set = new HashSet<List<Integer>>();
+        //Pair javafx사용
+        //Set<Pair<Integer, Integer>> set = new HashSet<Pair<Integer, Integer>>();
 
         //위험지역 좌표
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j] == 1) {
-                    set.add(Arrays.asList(i + 1, j + 1));
+                    set.add(Arrays.asList(i - 1, j + 1));
                     set.add(Arrays.asList(i + 1, j));
                     set.add(Arrays.asList(i + 1, j - 1));
                     set.add(Arrays.asList(i, j - 1));
@@ -27,6 +30,7 @@ public class SafeZone {
                     set.add(Arrays.asList(i - 1, j + 1));
                     set.add(Arrays.asList(i - 1, j));
                     set.add(Arrays.asList(i - 1, j - 1));
+                    //set.add(Pair.of(i - 1, j + 1));
                 }
             }
         }
