@@ -14,13 +14,13 @@ public class Parallel {
             ArrayList<Integer> indexList = new ArrayList<>(Arrays.asList(1, 2, 3));
             indexList.remove(Integer.valueOf(j));
             //System.out.println("indexList = " + indexList);
-            if (isParallel(dots[0], dots[j], dots[indexList.get(0)], dots[indexList.get(1)]) == 1) return 1;
+            if (isParallel(dots[0], dots[j], dots[indexList.get(0)], dots[indexList.get(1)])) return 1;
         }
         return 0;
     }
 
-    public int isParallel(int[] A, int[] B, int[] C, int[] D) { //평행여부
-        return (A[0] - B[0]) * (C[1] - D[1]) - (C[0] - D[0]) * (A[1] - B[1]) == 0 ? 1 : 0;
+    public boolean isParallel(int[] A, int[] B, int[] C, int[] D) { //평행여부
+        return (A[0] - B[0]) * (C[1] - D[1]) - (C[0] - D[0]) * (A[1] - B[1]) == 0;
     }
 
     /*int x1 = 0;
