@@ -1,4 +1,8 @@
 import level0.*;
+import level1.GymSuit;
+import level1.KnightWeapon;
+import level1.LottoBestWorstRank;
+import level1.NumberMate;
 
 public class Main {
     public static void main(String[] args) {
@@ -60,5 +64,21 @@ public class Main {
         int[] lottos = {44, 1, 0, 0, 31, 25};
         int[] win_nums = {31, 10, 45, 1, 6, 19};
         new LottoBestWorstRank().solution(lottos, win_nums);
+
+        //기사단원의 무기
+        new KnightWeapon().solution(5, 3, 2);
+
+        //체육복
+        int[] lost = {1, 2};
+        int[] reserve = {3};
+        new GymSuit().solution(2, lost, reserve);
+
+        //숫자짝꿍
+        String X = "";
+        for (int i = 0; i < 300; i++) {
+            X += "0";
+        }
+        new NumberMate().solution("5525", "1255");
+
     }
 }
