@@ -1,8 +1,5 @@
 import level0.*;
-import level1.GymSuit;
-import level1.KnightWeapon;
-import level1.LottoBestWorstRank;
-import level1.NumberMate;
+import level1.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -74,11 +71,19 @@ public class Main {
         new GymSuit().solution(2, lost, reserve);
 
         //숫자짝꿍
-        String X = "";
-        for (int i = 0; i < 300; i++) {
-            X += "0";
-        }
         new NumberMate().solution("5525", "1255");
+
+        //없는 숫자 더하기
+        int[] numbers = {1, 2, 3, 4, 5};
+        new AddNoneNumber().solution(numbers);
+
+        //음양더하기
+        int[] absolutes = {4, 7, 12};
+        boolean[] signs = {true, false, true};
+        new AddMinusPlus().solution(absolutes, signs);
+
+        //나머지가 1인 숫자
+        new NumberOfOneRemainder().solution(1);
 
     }
 }
