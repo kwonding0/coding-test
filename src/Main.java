@@ -85,5 +85,12 @@ public class Main {
         //나머지가 1인 숫자
         new NumberOfOneRemainder().solution(1);
 
+        //내적
+        int[] a1 = {1, 2, 3, 4};
+        int[] b1 = {-3, -1, 0, 2};
+        new DotProduct().solution(a1, b1);
+
+        //약수의 개수와 덧셈
+        new DivisorCntSum().solution(13, 17);
     }
 }
