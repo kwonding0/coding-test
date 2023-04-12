@@ -92,5 +92,16 @@ public class Main {
 
         //약수의 개수와 덧셈
         new DivisorCntSum().solution(13, 17);
+
+        //3진법 뒤집기
+        new TernaryFlip().solution(39);
+
+        //비밀지도
+        int[] arr1 = {9, 20, 28, 18, 11};
+        int[] arr2 = {30, 1, 21, 17, 28};
+        new SecretMap().solution(5, arr1, arr2);
+
+        //비밀지도
+        new NumberEnglishString().solution("2three45sixseven");
     }
 }
