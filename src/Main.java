@@ -132,5 +132,20 @@ public class Main {
 
         //신규 아이디 추천
         new NewIdRecommand().solution("...!@BaT#*..y.abc-_.~()defghijklm");
+
+        //성격유형 검사하기
+        String[] survey = {"AN", "CF", "MJ", "RT", "NA"};
+        int[] choices = {5, 3, 2, 7, 5};
+        new Mbti().solution(survey, choices);
+
+        //개인정보 수집 유효기간
+        String[] terms = {"A 6", "B 12", "C 3"};
+        String[] privacies = {"2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"};
+        new PersonalInfoCollectValidityPeriod().solution("2022.05.19", terms, privacies);
+
+        //신고 결과 받기
+        String[] id_list = {"muzi", "frodo", "apeach", "neo"};
+        String[] report = {"muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"};
+        new GetReportResult().solution(id_list, report, 2);
     }
 }
