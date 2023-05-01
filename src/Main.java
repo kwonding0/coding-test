@@ -120,5 +120,17 @@ public class Main {
 
         //다트게임
         new DartGame().solution("10D*10S#10T*");
+
+        //인형뽑기
+        int[][] board3 = {{0, 0, 0, 0, 0}, {0, 0, 1, 0, 3}, {0, 2, 5, 0, 1}, {4, 2, 4, 4, 2}, {3, 5, 1, 3, 1}};
+        int[] moves = {1, 5, 3, 5, 1, 2, 1, 4};
+        new DollDrawing().solution(board3, moves);
+
+        //키패드 누르기
+        int[] numbers3 = {1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5};
+        new PushKeyPad().solution(numbers3, "right");
+
+        //신규 아이디 추천
+        new NewIdRecommand().solution("...!@BaT#*..y.abc-_.~()defghijklm");
     }
 }
