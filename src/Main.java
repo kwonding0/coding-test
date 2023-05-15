@@ -1,5 +1,6 @@
 import level0.*;
 import level1.*;
+import level2.Cash;
 
 import java.text.ParseException;
 
@@ -149,5 +150,12 @@ public class Main {
         String[] id_list = {"muzi", "frodo", "apeach", "neo"};
         String[] report = {"muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"};
         new GetReportResult().solution(id_list, report, 2);
+
+        /*******************************************************************************************************/
+        /****************************************************Level2*********************************************/
+        /*******************************************************************************************************/
+        //[1차]캐시
+        String[] cities = {"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"};
+        new Cash().solution(3, cities);
     }
 }
