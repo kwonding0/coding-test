@@ -1,6 +1,7 @@
 import level0.*;
 import level1.*;
 import level2.Cash;
+import level2.NewsClustering;
 
 import java.text.ParseException;
 
@@ -157,5 +158,8 @@ public class Main {
         //[1차]캐시
         String[] cities = {"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"};
         new Cash().solution(3, cities);
+
+        //[1차]뉴스 클러스터링
+        new NewsClustering().solution("abab", "baba");
     }
 }
