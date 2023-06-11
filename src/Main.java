@@ -1,5 +1,6 @@
 import level0.*;
 import level1.*;
+import level2.BinaryDecimalCount;
 import level2.Cash;
 import level2.NewsClustering;
 
@@ -7,6 +8,9 @@ import java.text.ParseException;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
+        Integer v1 = 3;
+        Integer v2 = null;
+        //System.out.println("Math.min(v1,v2) = " + Math.min(v1, v2));
         /*******************************************************************************************************/
         /****************************************************Level0*********************************************/
         /*******************************************************************************************************/
@@ -160,6 +164,9 @@ public class Main {
         new Cash().solution(3, cities);
 
         //[1차]뉴스 클러스터링
-        new NewsClustering().solution("abab", "baba");
+        new NewsClustering().solution("FRANCE", "french");
+
+        //k진수에서 소수 개수 구하기
+        new BinaryDecimalCount().solution(437674, 3);
     }
 }
