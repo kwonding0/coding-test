@@ -1,8 +1,6 @@
 import level0.*;
 import level1.*;
-import level2.BinaryDecimalCount;
-import level2.Cash;
-import level2.NewsClustering;
+import level2.*;
 
 import java.text.ParseException;
 
@@ -168,5 +166,11 @@ public class Main {
 
         //k진수에서 소수 개수 구하기
         new BinaryDecimalCount().solution(437674, 3);
+
+        //[3차]압축
+        new Compression().solution("TOBEORNOTTOBEORTOBEORNOT");
+
+        //[3차]n진수 게임
+        new NBinaryGame().solution(16, 16, 2, 1);
     }
 }
