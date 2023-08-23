@@ -1,6 +1,5 @@
-import level0.*;
-import level1.*;
-import level2.*;
+import level2.FileNmSort;
+import level2.Friends4Block;
 
 import java.text.ParseException;
 
@@ -13,7 +12,7 @@ public class Main {
         /****************************************************Level0*********************************************/
         /*******************************************************************************************************/
         //옹알이
-        String[] a = {"a", "b"};
+        /*String[] a = {"a", "b"};
         new OngAlYee().solution(a);
 
         //문자열 밀기
@@ -55,7 +54,7 @@ public class Main {
         new AddStraightNumbers().solution(1, 2);
 
         //겹치는 선분의 길이
-        int[][] lines = {{-3, -1}, {-2, 1}, {0, 2}};/*{{0, 5}, {3, 9}, {1, 10}};*///{{0, 1}, {2, 3}, {4, 5}};
+        int[][] lines = {{-3, -1}, {-2, 1}, {0, 2}};*//*{{0, 5}, {3, 9}, {1, 10}};*//*//{{0, 1}, {2, 3}, {4, 5}};
         new OverlapLineLength().solution(lines);
 
         //평행
@@ -64,13 +63,13 @@ public class Main {
 
         //안전지대
         int[][] board = {{1, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 1}};
-        new SafeZone().solution(board);
+        new SafeZone().solution(board);*/
 
         /*******************************************************************************************************/
         /****************************************************Level1*********************************************/
         /*******************************************************************************************************/
         //로또의 최고 순위와 최저 순위
-        int[] lottos = {44, 1, 0, 0, 31, 25};
+        /*int[] lottos = {44, 1, 0, 0, 31, 25};
         int[] win_nums = {31, 10, 45, 1, 6, 19};
         new LottoBestWorstRank().solution(lottos, win_nums);
 
@@ -152,13 +151,13 @@ public class Main {
         //신고 결과 받기
         String[] id_list = {"muzi", "frodo", "apeach", "neo"};
         String[] report = {"muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"};
-        new GetReportResult().solution(id_list, report, 2);
+        new GetReportResult().solution(id_list, report, 2);*/
 
         /*******************************************************************************************************/
         /****************************************************Level2*********************************************/
         /*******************************************************************************************************/
         //[1차]캐시
-        String[] cities = {"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"};
+        /*String[] cities = {"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"};
         new Cash().solution(3, cities);
 
         //[1차]뉴스 클러스터링
@@ -180,6 +179,14 @@ public class Main {
         //주차요금
         int[] fees = {180, 5000, 10, 600};
         String[] records = {"05:34 5961 IN", "06:00 0000 IN", "06:34 0000 OUT", "07:59 5961 OUT", "07:59 0148 IN", "18:59 0000 IN", "19:09 0148 OUT", "22:59 5961 IN", "23:00 5961 OUT"};
-        new ParkingFee().solution(fees, records);
+        new ParkingFee().solution(fees, records);*/
+
+        //주차요금
+        String[] files = {"img12.png", "img10.png", "img02.png", "img1.png", "IMG01.GIF", "img2.JPG"};
+        new FileNmSort().solution(files);
+
+        //[1차] 프렌즈4블록
+        String[] board = {"TTTANT", "RRFACC", "RRRFCC", "TRRRAA", "TTMMMF", "TMMTTJ"};
+        new Friends4Block().solution(6, 6, board);
     }
 }
