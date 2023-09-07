@@ -1,64 +1,12 @@
 package level2;
 
 public class ParenthesesConversion {
-    String v = "";
     //괄호변환
     //https://school.programmers.co.kr/learn/courses/30/lessons/60058
 
-    /**
-     * u를 올바른 괄호 문자열이 나올떄까지 구하기
-     */
-    public String correctU(String s) {
-        System.out.println("s = " + s);
-        int left = 0;
-        int right = 0;
-        String u = "";
-        Boolean correct = false;
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            System.out.println("c = " + c);
-            if (c == '(') {
-                left++;
-                if (i == 0) correct = true; //올바른괄호인지 확인 (맨 앞이 왼쪽이면 올바른 괄호)
-            } else {
-                right++;
-            }
-            u += c;
-            if (left == right) {
-                if (correct) {
-                    v += u;
-                    s = s.substring(i);
-                    break;
-                }
-            }
-        }
-        System.out.println("left = " + left);
-        System.out.println("right = " + right);
-        System.out.println("u = " + u);
-
-        //올바른괄호가 아니면 4단계 진행
-
-
-
-        return correctU(s);
-
-        /*s
-        for(){
-
-        }
-        if(n == 0)
-            return 0;
-
-        if(n == 1 || n == 2)
-            return 1;
-
-        else
-            return rightU();*/
-    }
+    String correctS = "";
 
     public String solution(String p) {
-        String answer = "";
-
         /**
          * 1. 입력이 빈 문자열인 경우, 빈 문자열을 반환합니다.
          * 2. 문자열 w를 두 "균형잡힌 괄호 문자열" u, v로 분리합니다. 단, u는 "균형잡힌 괄호 문자열"로 더 이상 분리할 수 없어야 하며, v는 빈 문자열이 될 수 있습니다.
@@ -72,9 +20,53 @@ public class ParenthesesConversion {
          * 4-5. 생성된 문자열을 반환합니다.
          */
 
-        answer = correctU(p);
-        System.out.println("answer = " + answer);
-        System.out.println("v = " + v);
-        return answer;
+        return correctU(p);
+    }
+
+    /**
+     * u를 올바른 괄호 문자열이 나올떄까지 구하기
+     */
+    public String correctU(String s) {
+        int left = 0;
+        int right = 0;
+        String u = "";
+        String v = "";
+        Boolean correct = false;
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            u += c;
+
+            //왼쪽오른쪽 괄호 카운팅
+            if (c == '(') {
+                left++;
+                if (i == 0) correct = true; //올바른괄호인지 확인 (맨 앞이 왼쪽이면 올바른 괄호)
+            } else {
+                right++;
+            }
+
+            //개수 같으면 균형잡힌 괄호 문자열이므로 u로 설정
+            if (left == right) {
+                v = s.substring(i + 1); //s에서 u를 제외한 나머지는 v
+                if (correct) { //올바른 괄호일때
+                    correctS += u; //정답에 u더함
+                    if (v.length() > 0) {
+                        return correctU(v); //나머지 괄호로 함수 다시 호출
+                    } else {
+                        return correctS; //나머지 괄호가 없을 때 재귀 종료
+                    }
+                }
+                break;
+            }
+        }
+
+        //올바른괄호가 아니면 4단계 진행
+        correctS += "(";
+        if (v.length() > 0) correctU(v); //v로 1~3단계 진행한값 정답에 더해줌
+        correctS += ")";
+        u = u.length() == 2 ? "" : u.substring(1, u.length() - 1); //u의 앞뒤문자 제거
+        u = u.replaceAll("\\(", ")a").replaceAll("\\)(?!a)", "(").replaceAll("a", ""); //괄호 모두 반대로 바꿈
+        correctS += u;
+        return correctS;
     }
 }

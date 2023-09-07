@@ -1,4 +1,7 @@
+import level2.MenuRenewal;
 import level2.ParenthesesConversion;
+import level2.SameTwoQueueSum;
+import level2.SearchSong;
 
 import java.text.ParseException;
 
@@ -186,7 +189,7 @@ public class Main {
 
         //[1차] 프렌즈4블록
         String[] board = {"TTTANT", "RRFACC", "RRRFCC", "TRRRAA", "TTMMMF", "TMMTTJ"};
-        new Friends4Block().solution(6, 6, board);
+        new Friends4Block().solution(6, 6, board);*/
 
         //두 큐 합 같게 만들기
         int[] queue1 = {1, 1};
@@ -201,10 +204,10 @@ public class Main {
         //[3차]방금그곡
         String[] musicinfos = {"0:00,03:00,ISA,D#CC", "03:00,03:30,FOO,D#C#C", "04:00,04:30,BAR,C#CD#"};
         String m = "C#C";
-        new SearchSong().solution(m, musicinfos);*/
+        new SearchSong().solution(m, musicinfos);
 
         //괄호변환
-        String p = "()))((()";
+        String p = ")))()()(((";
         new ParenthesesConversion().solution(p);
     }
 }
