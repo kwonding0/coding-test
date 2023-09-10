@@ -1,7 +1,5 @@
-import level2.MenuRenewal;
-import level2.ParenthesesConversion;
-import level2.SameTwoQueueSum;
-import level2.SearchSong;
+import level2.MatrixBorderRotation;
+import level2.StringPressure;
 
 import java.text.ParseException;
 
@@ -189,7 +187,7 @@ public class Main {
 
         //[1차] 프렌즈4블록
         String[] board = {"TTTANT", "RRFACC", "RRRFCC", "TRRRAA", "TTMMMF", "TMMTTJ"};
-        new Friends4Block().solution(6, 6, board);*/
+        new Friends4Block().solution(6, 6, board);
 
         //두 큐 합 같게 만들기
         int[] queue1 = {1, 1};
@@ -208,6 +206,13 @@ public class Main {
 
         //괄호변환
         String p = ")))()()(((";
-        new ParenthesesConversion().solution(p);
+        new ParenthesesConversion().solution(p);*/
+
+        //행렬 테두리 회전
+        int[][] queries = {{2, 2, 5, 4}, {3, 3, 6, 6}, {5, 1, 6, 3}};
+        new MatrixBorderRotation().solution(6, 6, queries);
+
+        //문자열 압축
+        new StringPressure().solution("aabbacc");
     }
 }
