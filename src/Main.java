@@ -1,4 +1,5 @@
-import level2.*;
+import level2.CandidateKey;
+import level2.EmojiDiscount;
 
 import java.text.ParseException;
 
@@ -191,7 +192,7 @@ public class Main {
         //두 큐 합 같게 만들기
         int[] queue1 = {1, 1};
         int[] queue2 = {3, 2};
-        new SameTwoQueueSum().solution(queue1, queue2);*/
+        new SameTwoQueueSum().solution(queue1, queue2);
 
         //메뉴 리뉴얼
         String[] orders = {"XYZ", "XWY", "WXA"};
@@ -212,6 +213,15 @@ public class Main {
         new MatrixBorderRotation().solution(6, 6, queries);
 
         //문자열 압축
-        new StringPressure().solution("aabbacc");
+        new StringPressure().solution("aabbacc");*/
+
+        //후보키
+        String[][] relation = {{"100", "ryan", "music", "2"}, {"200", "apeach", "math", "2"}, {"300", "tube", "computer", "3"}, {"400", "con", "computer", "4"}, {"500", "muzi", "music", "3"}, {"600", "apeach", "music", "2"}};
+        new CandidateKey().solution(relation);
+
+        //이모티콘 할인행사
+        int[][] users = {{40, 2900}, {23, 10000}, {11, 5200}, {5, 5900}, {40, 3100}, {27, 9200}, {32, 6900}};
+        int[] emoticons = {1300, 1500, 1600, 4900};
+        new EmojiDiscount().solution(users, emoticons);
     }
 }
