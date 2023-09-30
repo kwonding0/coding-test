@@ -1,5 +1,7 @@
+import level2.ArcheryGame;
 import level2.CandidateKey;
 import level2.EmojiDiscount;
+import level2.SearchRank;
 
 import java.text.ParseException;
 
@@ -220,8 +222,23 @@ public class Main {
         new CandidateKey().solution(relation);
 
         //이모티콘 할인행사
-        int[][] users = {{40, 2900}, {23, 10000}, {11, 5200}, {5, 5900}, {40, 3100}, {27, 9200}, {32, 6900}};
-        int[] emoticons = {1300, 1500, 1600, 4900};
+        int[][] users = {{40, 10000}, {25, 10000}};
+        int[] emoticons = {7000, 9000};
         new EmojiDiscount().solution(users, emoticons);
+
+        //양궁게임
+        int n = 9;
+        int[] info = {0, 0, 1, 2, 0, 1, 1, 1, 1, 1, 1};
+        new ArcheryGame().solution(n, info);
+
+        //순위검색
+        String[] info2 = {"java backend junior pizza 150"
+                , "python frontend senior chicken 210"
+                , "python frontend senior chicken 150"
+                , "cpp backend senior pizza 260"
+                , "java backend junior chicken 80"
+                , "python backend senior chicken 50"};
+        String[] query = {"java and backend and junior and pizza 100", "python and frontend and senior and chicken 200", "cpp and - and senior and pizza 250", "- and backend and senior and - 150", "- and - and - and chicken 100", "- and - and - and - 150"};
+        new SearchRank().solution(info2, query);
     }
 }

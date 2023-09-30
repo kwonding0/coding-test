@@ -1,59 +1,78 @@
 package level2;
 
-import java.util.ArrayList;
-import java.util.List;
+import javafx.util.Pair;
+
+import java.util.*;
 
 public class EmojiDiscount {
     //이모티콘 할인행사
     //https://school.programmers.co.kr/learn/courses/30/lessons/150368
 
-    private static List<List<Integer>> generateCombinations(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        generate(nums, 0, new ArrayList<Integer>(), result);
-        return result;
-    }
-
-    private static void generate(int[] nums, int index, List<Integer> current, List<List<Integer>> result) {
-        if (index == nums.length) {
-            // 현재 조합을 결과에 추가
-            result.add(new ArrayList<>(current));
-            return;
-        }
-
-        // 현재 숫자를 선택하지 않는 경우
-        generate(nums, index + 1, current, result);
-
-        // 현재 숫자를 선택하는 경우
-        current.add(nums[index]);
-        generate(nums, index + 1, current, result);
-        current.remove(current.size() - 1); // 다음 경우를 위해 선택한 숫자를 제거
-    }
-
-    private static boolean isMinKey(List<List<Integer>> a, List<Integer> b) {
-        for (List<Integer> list : a) {
-            if (list.stream().allMatch(b::contains)) { //a List들 중에 모든값이 b에 들어있는지 확인 => 들어있으면 최소성이 접합하지 않음
-                return false;
-            }
-        }
-        return true;
-    }
+    static Set<Pair<Integer, Integer>> plusCntPrice = new HashSet<>(); //이모티콘 플러스 수, 총 가격 넣어놓을 set
+    static List<int[]> prices = new ArrayList<>(); //할인율 조합 넣어놓을 list
 
     public int[] solution(int[][] users, int[] emoticons) {
-        int[] answer = {};
+        int[] answer = new int[2];
+
+        /**1.4^이모티콘 개수 나올 수 있는 모든 할인조합 구하기**/
+        findOptimalCombination(emoticons, 0, emoticons.length, new int[emoticons.length]);
+
+        /**3.만들어진 조합대로 이모티콘 플러스 및 가격 구하기**/
+        for (int i = 0; i < prices.size(); i++) {
+            int[] price = prices.get(i);
+            calPlusCntPrice(users, emoticons, price);
+        }
+
+        /**4.목표 우선순위대로 (1.이모티콘 플러스 구독자 늘리기, 2.이모티콘 매출액을 최대한 늘리기) 목적을 최대한으로 달성했을 때의 값 구하기**/
+        Optional<Pair<Integer, Integer>> maxPair = plusCntPrice.stream()
+                .max(Comparator.comparing((Pair<Integer, Integer> p) -> p.getKey())
+                        .thenComparing((Pair<Integer, Integer> p) -> p.getValue()));
+
+        if (maxPair.isPresent()) {
+            Pair<Integer, Integer> result = maxPair.get();
+            answer[0] = result.getKey();
+            answer[1] = result.getValue();
+        }
+
         return answer;
     }
 
-    private boolean isOnlyKey(List<Integer> indexs, String[][] relation) {
-        List<String> keys = new ArrayList<>();
-        for (int i = 0; i < relation.length; i++) {
-            String s = "";
-            for (int index : indexs) {
-                s += relation[i][index]; //후보키값들 다 합쳐서 list에 넣기
-            }
-            keys.add(s);
+    private void findOptimalCombination(int[] emoticons, int idx, int size, int[] price) {
+        if (size == idx) {
+            /**2.만들어진 조합 list에 넣기**/
+            int[] temp = new int[price.length];
+            System.arraycopy(price, 0, temp, 0, price.length);
+            prices.add(temp);
+            return;
         }
 
-        //중복되는 값이 있음 -> 후보키 아님
-        return keys.size() == keys.stream().distinct().count();
+        for (int i = 10; i <= 40; i += 10) {
+            price[idx] = i;
+            findOptimalCombination(emoticons, idx + 1, size, price);
+        }
+    }
+
+    public void calPlusCntPrice(int[][] users, int[] emoticons, int[] price) {
+        int emoziPlus = 0;
+        int allPrice = 0;
+        for (int[] user : users) {
+            int totalPrice = 0;
+            int rate = user[0]; //할인비율
+            int maxPrice = user[1]; //최대금액
+
+            for (int j = 0; j < price.length; j++) {
+                if (rate <= price[j]) { //내가 사기로한 비율보다 할인을 많이 하면 구매
+                    totalPrice += (emoticons[j] * ((100 - price[j]) * 0.01));
+                }
+                if (totalPrice >= maxPrice) { //이모티콘 구입 합산가격이 내 기준 최대가격 이상이면 이모티콘 플러스로 전환
+                    emoziPlus++; //이모티콘 플러스 유저 수 추가
+                    totalPrice = 0; //지금까지 구입한 이모티콘 구입 취소
+                    break;
+                }
+            }
+
+            allPrice += totalPrice; //모든 유저 전체 금액에 합산
+        }
+        plusCntPrice.add(new Pair<>(emoziPlus, allPrice));
     }
 }
