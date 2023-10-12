@@ -1,7 +1,5 @@
-import level2.ArcheryGame;
-import level2.CandidateKey;
-import level2.EmojiDiscount;
-import level2.SearchRank;
+import level2.DeliveryService;
+import level3.SharedTaxiFee;
 
 import java.text.ParseException;
 
@@ -215,7 +213,7 @@ public class Main {
         new MatrixBorderRotation().solution(6, 6, queries);
 
         //문자열 압축
-        new StringPressure().solution("aabbacc");*/
+        new StringPressure().solution("aabbacc");
 
         //후보키
         String[][] relation = {{"100", "ryan", "music", "2"}, {"200", "apeach", "math", "2"}, {"300", "tube", "computer", "3"}, {"400", "con", "computer", "4"}, {"500", "muzi", "music", "3"}, {"600", "apeach", "music", "2"}};
@@ -231,6 +229,7 @@ public class Main {
         int[] info = {0, 0, 1, 2, 0, 1, 1, 1, 1, 1, 1};
         new ArcheryGame().solution(n, info);
 
+
         //순위검색
         String[] info2 = {"java backend junior pizza 150"
                 , "python frontend senior chicken 210"
@@ -240,5 +239,25 @@ public class Main {
                 , "python backend senior chicken 50"};
         String[] query = {"java and backend and junior and pizza 100", "python and frontend and senior and chicken 200", "cpp and - and senior and pizza 250", "- and backend and senior and - 150", "- and - and - and chicken 100", "- and - and - and - 150"};
         new SearchRank().solution(info2, query);
+
+        //입국심사
+        int n3 = 6;
+        int[] times = {7, 10};
+        new Immigration().solution(n3, times);*/
+
+        //택배 배달과 수거하기
+        int cap = 4;
+        int n4 = 5;
+        int[] deliveries = {1, 0, 3, 1, 2};
+        int[] pickups = {0, 3, 0, 4, 0};
+        new DeliveryService().solution(cap, n4, deliveries, pickups);
+
+        //합승 택시 요금
+        int n5 = 6;
+        int s = 4;
+        int a = 6;
+        int b = 2;
+        int[][] fares = {{4, 1, 10}, {3, 5, 24}, {5, 6, 2}, {3, 1, 41}, {5, 1, 24}, {4, 6, 50}, {2, 4, 66}, {2, 3, 22}, {1, 6, 25}};
+        new SharedTaxiFee().solution(n5, s, a, b, fares);
     }
 }
