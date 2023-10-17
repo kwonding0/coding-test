@@ -1,5 +1,4 @@
-import level2.DeliveryService;
-import level3.SharedTaxiFee;
+import level3.LockAndKey;
 
 import java.text.ParseException;
 
@@ -243,7 +242,7 @@ public class Main {
         //입국심사
         int n3 = 6;
         int[] times = {7, 10};
-        new Immigration().solution(n3, times);*/
+        new Immigration().solution(n3, times);
 
         //택배 배달과 수거하기
         int cap = 4;
@@ -259,5 +258,15 @@ public class Main {
         int b = 2;
         int[][] fares = {{4, 1, 10}, {3, 5, 24}, {5, 6, 2}, {3, 1, 41}, {5, 1, 24}, {4, 6, 50}, {2, 4, 66}, {2, 3, 22}, {1, 6, 25}};
         new SharedTaxiFee().solution(n5, s, a, b, fares);
+
+        //셔틀버스
+        String[] timetable = {"09:00", "09:10", "09:20", "09:30", "09:40", "09:50",
+                "10:00", "10:10", "10:20", "10:30", "10:40", "10:50"};
+        new ShuttleBus().solution(10, 25, 1, timetable);*/
+
+        //자물쇠와 열쇠
+        int[][] key = {{0, 0, 0}, {1, 0, 0}, {0, 1, 1}};
+        int[][] lock = {{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 0}, {1, 1, 0, 1}};
+        new LockAndKey().solution(key, lock);
     }
 }
