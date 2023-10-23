@@ -16,15 +16,12 @@ public class ShuttleBus {
 
         //크루원 도착시간 정렬
         timetable = Arrays.stream(timetable).sorted().toArray(String[]::new);
-        System.out.println("Arrays.toString(timetable) = " + Arrays.toString(timetable));
 
         //셔틀 도착 시간 배열 구하기
         for (int i = 1; i < n; i++) {
             startTime = startTime.plusMinutes(t);
             shuttleTime[i] = startTime.toString();
         }
-
-        System.out.println("Arrays.toString(shuttleTime) : " + Arrays.toString(shuttleTime));
 
         int j = 0;
         int cnt = 0;
@@ -46,13 +43,7 @@ public class ShuttleBus {
                 i--;
             }
 
-            System.out.println("shuttleHm = " + Arrays.toString(shuttleHm));
-            System.out.println("cnt = " + cnt);
-
             if (reset) {
-                System.out.println("j = " + j);
-                System.out.println("n-1 = " + (n - 1));
-
                 if (j == n - 1) { //마지막 셔틀시간에 마지막으로 탑승한 사람의 시간 확인
                     if (cnt == m) { //셔틀버스에 사람이 꽉찼으면 마지막 탑승 사람보다 1분 빠르게 도착해야함
                         answer = LocalTime.of(hm[0], hm[1]).plusMinutes(-1).toString();
@@ -68,8 +59,6 @@ public class ShuttleBus {
             }
 
         }
-
-        System.out.println("answer = " + answer);
 
         return answer;
     }

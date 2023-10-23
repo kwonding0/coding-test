@@ -8,11 +8,11 @@ public class DeliveryService {
         int cnt = 0;
         long deliveryCnt = 0;
         long pickupCnt = 0;
-        //제일 먼 집부터 수거 및 배달 하기
+        // 제일 먼 집부터 수거 및 배달 하기
         for (int i = n - 1; i >= 0; i--) {
             if (deliveries[i] > 0 || pickups[i] > 0) {
                 cnt = 0;
-                while (deliveries[i] > deliveryCnt || pickups[i] > pickupCnt) { //배달 및 픽업이 남아있을때까지 진행
+                while (deliveries[i] > deliveryCnt || pickups[i] > pickupCnt) { // 배달 및 픽업이 남아있을때까지 진행
                     deliveryCnt += cap;
                     pickupCnt += cap;
 

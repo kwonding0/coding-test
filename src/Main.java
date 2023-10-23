@@ -1,4 +1,5 @@
-import level3.LockAndKey;
+import level3.FindRoadGame;
+import level3.UntouchedBuilding;
 
 import java.text.ParseException;
 
@@ -262,11 +263,20 @@ public class Main {
         //셔틀버스
         String[] timetable = {"09:00", "09:10", "09:20", "09:30", "09:40", "09:50",
                 "10:00", "10:10", "10:20", "10:30", "10:40", "10:50"};
-        new ShuttleBus().solution(10, 25, 1, timetable);*/
+        new ShuttleBus().solution(10, 25, 1, timetable);
 
         //자물쇠와 열쇠
         int[][] key = {{0, 0, 0}, {1, 0, 0}, {0, 1, 1}};
         int[][] lock = {{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 0}, {1, 1, 0, 1}};
-        new LockAndKey().solution(key, lock);
+        new LockAndKey().solution(key, lock);*/
+
+        //파괴되지 않은 건물
+        int[][] board2 = {{5, 5, 5, 5, 5}, {5, 5, 5, 5, 5}, {5, 5, 5, 5, 5}, {5, 5, 5, 5, 5}};
+        int[][] skill = {{1, 0, 0, 3, 4, 4}, {1, 2, 0, 2, 3, 2}, {2, 1, 0, 3, 1, 2}, {1, 0, 1, 3, 3, 1}};
+        new UntouchedBuilding().solution(board2, skill);
+
+        //길 찾기 게임
+        int[][] nodeinfo = {{5, 3}, {11, 5}, {13, 3}, {3, 5}, {6, 1}, {1, 3}, {8, 6}, {7, 2}, {2, 2}};
+        new FindRoadGame().solution(nodeinfo);
     }
 }
