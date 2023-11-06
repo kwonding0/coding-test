@@ -1,5 +1,4 @@
-import level3.FindRoadGame;
-import level3.UntouchedBuilding;
+import level3.SheepAndWolf;
 
 import java.text.ParseException;
 
@@ -268,7 +267,7 @@ public class Main {
         //자물쇠와 열쇠
         int[][] key = {{0, 0, 0}, {1, 0, 0}, {0, 1, 1}};
         int[][] lock = {{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 0}, {1, 1, 0, 1}};
-        new LockAndKey().solution(key, lock);*/
+        new LockAndKey().solution(key, lock);
 
         //파괴되지 않은 건물
         int[][] board2 = {{5, 5, 5, 5, 5}, {5, 5, 5, 5, 5}, {5, 5, 5, 5, 5}, {5, 5, 5, 5, 5}};
@@ -278,5 +277,18 @@ public class Main {
         //길 찾기 게임
         int[][] nodeinfo = {{5, 3}, {11, 5}, {13, 3}, {3, 5}, {6, 1}, {1, 3}, {8, 6}, {7, 2}, {2, 2}};
         new FindRoadGame().solution(nodeinfo);
+
+        //기둥과 보
+        int[][] build_frame = {{0, 0, 0, 1}, {2, 0, 0, 1}, {4, 0, 0, 1}, {0, 1, 1, 1}, {1, 1, 1, 1}, {2, 1, 1, 1}, {3, 1, 1, 1}, {2, 0, 0, 0}, {1, 1, 1, 0}, {2, 2, 0, 1}};
+        new ColumnsAndBo().solution(5, build_frame);
+
+        //광고삽입
+        String[] logs = {"01:20:15-01:45:14", "00:40:31-01:00:00", "00:25:50-00:48:29", "01:30:59-01:53:29", "01:37:44-02:02:30"};
+        new AddAdvertisement().solution("02:03:55", "00:14:15", logs);*/
+
+        //늑대와양
+        int[] info5 = {0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1};
+        int[][] edges = {{0, 1}, {1, 2}, {1, 4}, {0, 8}, {8, 7}, {9, 10}, {9, 11}, {4, 3}, {6, 5}, {4, 6}, {8, 9}};
+        new SheepAndWolf().solution(info5, edges);
     }
 }
